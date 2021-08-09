@@ -45,7 +45,7 @@ class Board {
 
   getColumn(index) {
     let column = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 9; i++) {
       let currentRow = this.getRow(i);
       column.push(currentRow[index]);
     }
@@ -55,7 +55,7 @@ class Board {
   checkColumn(index) {
     const column = this.getColumn(index);
     const colObj = {};
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 9; i++) {
       if (column[i] === 0) continue;
       colObj[column[i]] ? colObj[column[i]]++ : (colObj[column[i]] = 1);
     }
@@ -68,7 +68,7 @@ class Board {
   }
 
   checkAllColumns() {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 9; i++) {
       if (!this.checkColumn(i)) return false;
     }
     return true;
