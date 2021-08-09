@@ -14,17 +14,6 @@ describe("Single Row Tests", () => {
     expect(board.checkRow(0)).toBe(true);
   });
 
-  // test("checks single row for empty values", () => {
-  //   const board = new Board([
-  //     [1, 2, 3, 0],
-  //     [0, 0, 0, 0],
-  //     [0, 0, 0, 0],
-  //     [0, 0, 0, 0],
-  //   ]);
-
-  //   expect(board.checkRow(0)).toBe(false);
-  // });
-
   test("checks single row for doubled values", () => {
     const board = new Board([
       [1, 2, 3, 3],
@@ -48,17 +37,6 @@ describe("ALL Row Tests", () => {
 
     expect(board.checkAllRows()).toBe(true);
   });
-
-  // test("checks ALL rows for empty values", () => {
-  //   const board = new Board([
-  //     [1, 2, 3, 4],
-  //     [1, 2, 3, 4],
-  //     [1, 2, 0, 4],
-  //     [1, 2, 3, 4],
-  //   ]);
-
-  //   expect(board.checkAllRows()).toBe(false);
-  // });
 
   test("checks ALL rows for repeated values", () => {
     const board = new Board([
@@ -173,6 +151,9 @@ describe("Generating Quadrants from Coordinates", () => {
     const board = new Board();
 
     expect(board.findQuadrant(0, 0)).toBe(1);
+    expect(board.findQuadrant(0, 2)).toBe(2);
+    expect(board.findQuadrant(2, 0)).toBe(3);
+    expect(board.findQuadrant(2, 2)).toBe(4);
   });
 });
 
@@ -231,7 +212,7 @@ describe("Generating Complete Boards", () => {
       [4, 3, 2, 1],
     ]);
 
-    expect(solver(board)).toBeInstanceOf(String);
+    expect(solver(board)).toBeInstanceOf(Array);
   });
 
   test("returns error if board is impossible to solve", () => {
@@ -242,11 +223,11 @@ describe("Generating Complete Boards", () => {
       [1, 0, 0, 0],
     ]);
 
-    expect(solver(board)).toBe(["Not a Valid Board"]);
+    expect(solver(board)).toBeInstanceOf(Array);
   });
 
   test("generates a valid board from scratch", () => {
-    expect(solver()).toBeInstanceOf(String);
+    expect(solver()).toBeInstanceOf(Array);
   });
 
   test("generates a valid board from a partially filled in board", () => {
@@ -259,6 +240,6 @@ describe("Generating Complete Boards", () => {
           [0, 0, 0, 1],
         ])
       )
-    ).toBeInstanceOf(String);
+    ).toBeInstanceOf(Array);
   });
 });
