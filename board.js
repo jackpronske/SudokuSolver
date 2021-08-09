@@ -22,7 +22,7 @@ class Board {
   checkRow(index) {
     const row = this.getRow(index);
     const rowObj = {};
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 9; i++) {
       if (row[i] === 0) continue;
       rowObj[row[i]] ? rowObj[row[i]]++ : (rowObj[row[i]] = 1);
     }
@@ -35,7 +35,7 @@ class Board {
   }
 
   checkAllRows() {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 9; i++) {
       if (!this.checkRow(i)) return false;
     }
     return true;
