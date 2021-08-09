@@ -8,7 +8,7 @@ class Board {
     ];
   }
 
-  //rows is changed
+  //rows
 
   getRow(index) {
     return this.board[index];
