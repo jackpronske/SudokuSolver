@@ -1,0 +1,23 @@
+{
+  "name": "sudokusolver",
+  "version": "1.0.0",
+  "description": "An application in which to enter in any sudoku board and have it return a valid solution",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackpronske/SudokuSolver.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackpronske/SudokuSolver/issues"
+  },
+  "homepage": "https://github.com/jackpronske/SudokuSolver#readme",
+  "dependencies": {
+    "jest": "^27.0.6"
+  }
+}
