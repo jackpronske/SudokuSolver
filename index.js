@@ -25,8 +25,8 @@ rl.question("line 1: ", function (input1) {
 });
 
 rl.on("close", function () {
-  console.log(userInput);
-  console.log(solver(new Board(userInput))[0]);
+  console.log("Input: ", userInput);
+  console.log("Solution: ", solver(new Board(userInput))[0]);
   process.exit(0);
 });
 
