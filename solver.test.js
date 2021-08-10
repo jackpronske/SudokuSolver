@@ -154,99 +154,139 @@ describe("Generating Quadrants from Coordinates", () => {
   });
 });
 
-// describe("Single Quadrant Tests", () => {
-//   test("checks single quadrant for validity", () => {
-//     const board = new Board([
-//       [1, 2, 0, 0],
-//       [3, 4, 0, 0],
-//       [0, 0, 0, 0],
-//       [0, 0, 0, 0],
-//     ]);
+describe("Single Quadrant Tests", () => {
+  test("checks single quadrant for validity", () => {
+    const board = new Board([
+      [1, 2, 3, 0, 0, 0, 0, 0, 0],
+      [4, 5, 6, 0, 0, 0, 0, 0, 0],
+      [7, 8, 9, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ]);
 
-//     expect(board.checkQuadrant(1)).toBe(true);
-//   });
+    expect(board.checkQuadrant(1)).toBe(true);
+  });
 
-//   test("checks single quadrant for repeated values", () => {
-//     const board = new Board([
-//       [1, 2, 0, 0],
-//       [4, 4, 0, 0],
-//       [0, 0, 0, 0],
-//       [0, 0, 0, 0],
-//     ]);
+  test("checks single quadrant for repeated values", () => {
+    const board = new Board([
+      [1, 2, 3, 0, 0, 0, 0, 0, 0],
+      [4, 4, 6, 0, 0, 0, 0, 0, 0],
+      [7, 8, 9, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ]);
 
-//     expect(board.checkQuadrant(1)).toBe(false);
-//   });
-// });
+    expect(board.checkQuadrant(1)).toBe(false);
+  });
+});
 
-// describe("ALL Quadrant Tests", () => {
-//   test("checks ALL quadrants for validity", () => {
-//     const board = new Board([
-//       [1, 2, 1, 2],
-//       [3, 4, 3, 4],
-//       [1, 2, 1, 2],
-//       [3, 4, 3, 4],
-//     ]);
+describe("ALL Quadrant Tests", () => {
+  test("checks ALL quadrants for validity", () => {
+    const board = new Board([
+      [1, 2, 3, 1, 2, 3, 1, 2, 3],
+      [4, 5, 6, 4, 5, 6, 4, 5, 6],
+      [7, 8, 9, 7, 8, 9, 7, 8, 9],
+      [1, 2, 3, 1, 2, 3, 1, 2, 3],
+      [4, 5, 6, 4, 5, 6, 4, 5, 6],
+      [7, 8, 9, 7, 8, 9, 7, 8, 9],
+      [1, 2, 3, 1, 2, 3, 1, 2, 3],
+      [4, 5, 6, 4, 5, 6, 4, 5, 6],
+      [7, 8, 9, 7, 8, 9, 7, 8, 9],
+    ]);
 
-//     expect(board.checkAllQuadrants()).toBe(true);
-//   });
+    expect(board.checkAllQuadrants()).toBe(true);
+  });
 
-//   test("checks ALL quadrants for repeated values", () => {
-//     const board = new Board([
-//       [1, 2, 1, 2],
-//       [3, 4, 3, 4],
-//       [1, 1, 1, 2],
-//       [3, 4, 3, 4],
-//     ]);
+  test("checks ALL quadrants for repeated values", () => {
+    const board = new Board([
+      [1, 2, 2, 1, 2, 3, 1, 2, 3],
+      [4, 5, 6, 4, 5, 6, 4, 5, 6],
+      [7, 8, 9, 7, 8, 9, 7, 8, 9],
+      [1, 2, 3, 1, 2, 3, 1, 2, 3],
+      [4, 5, 6, 4, 5, 6, 4, 5, 6],
+      [7, 8, 9, 7, 8, 9, 7, 8, 9],
+      [1, 2, 3, 1, 2, 3, 1, 2, 3],
+      [4, 5, 6, 4, 5, 6, 4, 5, 6],
+      [7, 8, 9, 7, 8, 9, 7, 8, 9],
+    ]);
 
-//     expect(board.checkAllQuadrants()).toBe(false);
-//   });
-// });
+    expect(board.checkAllQuadrants()).toBe(false);
+  });
+});
 
-// describe("Completed Board Tests", () => {
-//   test("checks a completed board for empty figures", () => {
-//     const board = new Board([
-//       [1, 2, 3, 4],
-//       [3, 4, 1, 2],
-//       [2, 1, 4, 3],
-//       [4, 3, 2, 1],
-//     ]);
+describe("Completed Board Tests", () => {
+  test("returns true for a filled in board", () => {
+    const board = new Board([
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    ]);
 
-//     expect(board.isFilledIn()).toBe(true);
-//   });
+    expect(board.isFilledIn()).toBe(true);
+  });
 
-//   test("checks an incomplete board for empty figures", () => {
-//     const board = new Board([
-//       [1, 2, 3, 0],
-//       [3, 4, 1, 2],
-//       [2, 1, 4, 3],
-//       [4, 3, 0, 0],
-//     ]);
+  test("returns false due to incomplete board", () => {
+    const board = new Board([
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [0, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    ]);
 
-//     expect(board.isFilledIn()).toBe(false);
-//   });
+    expect(board.isFilledIn()).toBe(false);
+  });
 
-//   test("checks a completed board for validity", () => {
-//     const board = new Board([
-//       [1, 2, 3, 4],
-//       [3, 4, 1, 2],
-//       [2, 1, 4, 3],
-//       [4, 3, 2, 1],
-//     ]);
+  test("checks a completed board for validity", () => {
+    const board = new Board([
+      [5, 3, 4, 6, 7, 8, 9, 1, 2],
+      [6, 7, 2, 1, 9, 5, 3, 4, 8],
+      [1, 9, 8, 3, 4, 2, 5, 6, 7],
+      [8, 5, 9, 7, 6, 1, 4, 2, 3],
+      [4, 2, 6, 8, 5, 3, 7, 9, 1],
+      [7, 1, 3, 9, 2, 4, 8, 5, 6],
+      [9, 6, 1, 5, 3, 7, 2, 8, 4],
+      [2, 8, 7, 4, 1, 9, 6, 3, 5],
+      [3, 4, 5, 2, 8, 6, 1, 7, 9],
+    ]);
 
-//     expect(board.checker()).toBe(true);
-//   });
+    expect(board.checker()).toBe(true);
+  });
 
-//   test("checks a completed board for errors", () => {
-//     const board = new Board([
-//       [1, 2, 1, 4],
-//       [3, 4, 1, 2],
-//       [2, 1, 4, 3],
-//       [4, 3, 2, 1],
-//     ]);
+  test("checks a completed board for errors", () => {
+    const board = new Board([
+      [5, 3, 4, 6, 7, 8, 9, 1, 1],
+      [6, 7, 2, 1, 9, 5, 3, 4, 8],
+      [1, 9, 8, 3, 4, 2, 5, 6, 7],
+      [8, 5, 9, 7, 6, 1, 4, 2, 3],
+      [4, 2, 6, 8, 5, 3, 7, 9, 1],
+      [7, 1, 3, 9, 2, 4, 8, 5, 6],
+      [9, 6, 1, 5, 3, 7, 2, 8, 4],
+      [2, 8, 7, 4, 1, 9, 6, 3, 5],
+      [3, 4, 5, 2, 8, 6, 1, 7, 9],
+    ]);
 
-//     expect(board.checker()).toBe(false);
-//   });
-// });
+    expect(board.checker()).toBe(false);
+  });
+});
 
 // describe("Generating Complete Boards", () => {
 //   test("returns the input board if it is already valid", () => {
