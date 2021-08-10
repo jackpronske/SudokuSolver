@@ -138,6 +138,22 @@ describe("ALL Column Tests", () => {
   });
 });
 
+describe("Generating Quadrants from Coordinates", () => {
+  test("produces a valid quadrant from a set of coordinates", () => {
+    const board = new Board();
+
+    expect(board.findQuadrant(1, 1)).toBe(1);
+    expect(board.findQuadrant(1, 4)).toBe(2);
+    expect(board.findQuadrant(1, 7)).toBe(3);
+    expect(board.findQuadrant(4, 1)).toBe(4);
+    expect(board.findQuadrant(4, 4)).toBe(5);
+    expect(board.findQuadrant(4, 7)).toBe(6);
+    expect(board.findQuadrant(7, 1)).toBe(7);
+    expect(board.findQuadrant(7, 4)).toBe(8);
+    expect(board.findQuadrant(7, 7)).toBe(9);
+  });
+});
+
 // describe("Single Quadrant Tests", () => {
 //   test("checks single quadrant for validity", () => {
 //     const board = new Board([
@@ -183,17 +199,6 @@ describe("ALL Column Tests", () => {
 //     ]);
 
 //     expect(board.checkAllQuadrants()).toBe(false);
-//   });
-// });
-
-// describe("Generating Quadrants from Coordinates", () => {
-//   test("produces a valid quadrant from a set of coordinates", () => {
-//     const board = new Board();
-
-//     expect(board.findQuadrant(0, 0)).toBe(1);
-//     expect(board.findQuadrant(0, 2)).toBe(2);
-//     expect(board.findQuadrant(2, 0)).toBe(3);
-//     expect(board.findQuadrant(2, 2)).toBe(4);
 //   });
 // });
 
