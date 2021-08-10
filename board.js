@@ -13,20 +13,7 @@ class Board {
     ];
   }
 
-  //testboard
-  // let test = [
-  //   [1,1,1,2,2,2,3,3,3],
-  //   [1,1,1,2,2,2,3,3,3],
-  //   [1,1,1,2,2,2,3,3,3],
-  //   [4,4,4,5,5,5,6,6,6],
-  //   [4,4,4,5,5,5,6,6,6],
-  //   [4,4,4,5,5,5,6,6,6],
-  //   [7,7,7,8,8,8,9,9,9],
-  //   [7,7,7,8,8,8,9,9,9],
-  //   [7,7,7,8,8,8,9,9,9],
-  // ]
-
-  //rows is changed
+  /* ------ ROW METHODS ------ */
 
   getRow(index) {
     return this.board[index];
@@ -54,7 +41,7 @@ class Board {
     return true;
   }
 
-  //columns
+  /* ------ COLUMN METHODS ------ */
 
   getColumn(index) {
     let column = [];
@@ -87,7 +74,7 @@ class Board {
     return true;
   }
 
-  //quadrants
+  /* ------ QUADRANT METHODS ------ */
 
   findQuadrant(rowInd, colInd) {
     if (rowInd < 3) {
@@ -234,6 +221,8 @@ class Board {
     }
     return true;
   }
+
+  /* ------ COMPLETED BOARD METHODS ------ */
 
   isFilledIn() {
     for (let i = 0; i < 9; i++) {
