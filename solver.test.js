@@ -70,53 +70,73 @@ describe("ALL Row Tests", () => {
   });
 });
 
-// describe("Single Column Tests", () => {
-//   test("checks single column for validity", () => {
-//     const board = new Board([
-//       [1, 0, 0, 0],
-//       [3, 0, 0, 0],
-//       [2, 0, 0, 0],
-//       [4, 0, 0, 0],
-//     ]);
+describe("Single Column Tests", () => {
+  test("checks single column for validity", () => {
+    const board = new Board([
+      [1, 0, 0, 0, 0, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0, 0, 0, 0, 0],
+      [3, 0, 0, 0, 0, 0, 0, 0, 0],
+      [4, 0, 0, 0, 0, 0, 0, 0, 0],
+      [5, 0, 0, 0, 0, 0, 0, 0, 0],
+      [6, 0, 0, 0, 0, 0, 0, 0, 0],
+      [7, 0, 0, 0, 0, 0, 0, 0, 0],
+      [8, 0, 0, 0, 0, 0, 0, 0, 0],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0],
+    ]);
 
-//     expect(board.checkColumn(0)).toBe(true);
-//   });
+    expect(board.checkColumn(0)).toBe(true);
+  });
 
-//   test("checks single column for doubled values", () => {
-//     const board = new Board([
-//       [1, 0, 0, 0],
-//       [2, 0, 0, 0],
-//       [2, 0, 0, 0],
-//       [4, 0, 0, 0],
-//     ]);
+  test("checks single column for doubled values", () => {
+    const board = new Board([
+      [1, 0, 0, 0, 0, 0, 0, 0, 0],
+      [1, 0, 0, 0, 0, 0, 0, 0, 0],
+      [3, 0, 0, 0, 0, 0, 0, 0, 0],
+      [4, 0, 0, 0, 0, 0, 0, 0, 0],
+      [5, 0, 0, 0, 0, 0, 0, 0, 0],
+      [6, 0, 0, 0, 0, 0, 0, 0, 0],
+      [7, 0, 0, 0, 0, 0, 0, 0, 0],
+      [8, 0, 0, 0, 0, 0, 0, 0, 0],
+      [9, 0, 0, 0, 0, 0, 0, 0, 0],
+    ]);
 
-//     expect(board.checkColumn(0)).toBe(false);
-//   });
-// });
+    expect(board.checkColumn(0)).toBe(false);
+  });
+});
 
-// describe("ALL Column Tests", () => {
-//   test("checks ALL columns for validity", () => {
-//     const board = new Board([
-//       [1, 1, 1, 1],
-//       [2, 2, 2, 2],
-//       [3, 3, 3, 3],
-//       [4, 4, 4, 4],
-//     ]);
+describe("ALL Column Tests", () => {
+  test("checks ALL columns for validity", () => {
+    const board = new Board([
+      [1, 1, 1, 1, 1, 1, 1, 1, 1],
+      [2, 2, 2, 2, 2, 2, 2, 2, 2],
+      [3, 3, 3, 3, 3, 3, 3, 3, 3],
+      [4, 4, 4, 4, 4, 4, 4, 4, 4],
+      [5, 5, 5, 5, 5, 5, 5, 5, 5],
+      [6, 6, 6, 6, 6, 6, 6, 6, 6],
+      [7, 7, 7, 7, 7, 7, 7, 7, 7],
+      [8, 8, 8, 8, 8, 8, 8, 8, 8],
+      [9, 9, 9, 9, 9, 9, 9, 9, 9],
+    ]);
 
-//     expect(board.checkAllColumns()).toBe(true);
-//   });
+    expect(board.checkAllColumns()).toBe(true);
+  });
 
-//   test("checks ALL columns for repeated values", () => {
-//     const board = new Board([
-//       [1, 1, 1, 1],
-//       [2, 1, 2, 2],
-//       [3, 3, 3, 3],
-//       [4, 4, 4, 4],
-//     ]);
+  test("checks ALL columns for repeated values", () => {
+    const board = new Board([
+      [1, 1, 1, 1, 1, 1, 1, 1, 1],
+      [2, 2, 2, 2, 2, 2, 2, 2, 2],
+      [3, 3, 3, 3, 3, 3, 3, 3, 3],
+      [4, 4, 4, 4, 4, 4, 4, 4, 4],
+      [5, 5, 5, 5, 5, 5, 5, 5, 5],
+      [6, 6, 6, 6, 6, 6, 6, 6, 6],
+      [7, 7, 7, 7, 7, 7, 7, 6, 7],
+      [8, 8, 8, 8, 8, 8, 8, 8, 8],
+      [9, 9, 9, 9, 9, 9, 9, 9, 9],
+    ]);
 
-//     expect(board.checkAllColumns()).toBe(false);
-//   });
-// });
+    expect(board.checkAllColumns()).toBe(false);
+  });
+});
 
 // describe("Single Quadrant Tests", () => {
 //   test("checks single quadrant for validity", () => {
