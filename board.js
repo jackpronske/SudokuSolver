@@ -77,19 +77,31 @@ class Board {
   //quadrants
 
   findQuadrant(rowInd, colInd) {
-    if (rowInd < 2) {
-      if (colInd < 2) {
+    if (rowInd < 3) {
+      if (colInd < 3) {
         return 1;
-      } else {
+      }
+      if (colInd < 6) {
         return 2;
       }
-    } else {
-      if (colInd < 2) {
-        return 3;
-      } else {
+      return 3;
+    }
+    if (rowInd < 6) {
+      if (colInd < 3) {
         return 4;
       }
+      if (colInd < 6) {
+        return 5;
+      }
+      return 6;
     }
+    if (colInd < 3) {
+      return 7;
+    }
+    if (colInd < 6) {
+      return 8;
+    }
+    return 9;
   }
 
   getQuadrantArray(quad) {
