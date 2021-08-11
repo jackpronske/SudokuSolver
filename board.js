@@ -15,6 +15,7 @@ class Board {
 
   /* ------ ROW METHODS ------ */
 
+
   getRow(index) {
     return this.board[index];
   }
