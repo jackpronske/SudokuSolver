@@ -321,10 +321,6 @@ describe("Generating Complete Boards", () => {
     expect(solver(board)).toBeInstanceOf(Array);
   });
 
-  // test("generates a valid board from scratch", () => {
-  //   expect(solver()).toBeInstanceOf(Array);
-  // });
-
   test("generates a valid board from a partially filled in board", () => {
     expect(
       solver(
