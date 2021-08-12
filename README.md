@@ -2,6 +2,8 @@
 
 An application in which to enter in any sudoku board and have it return a valid solution
 
+- current algo will solve AI Escargot in roughly 24 hours lol, but hey it solves it!
+
 As of right now, the program works entirely in the command line. Here's how to start the project:
 
 - fork and clone this repository to your gitHub/local machine
