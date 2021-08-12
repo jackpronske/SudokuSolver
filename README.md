@@ -4,6 +4,8 @@ An application in which to enter in any sudoku board and have it return a valid 
 
 As of right now, the program works entirely in the command line. Here's how to start the project:
 
+- fork and clone this repository to your gitHub/local machine
+
 - 'npm install' to get all dependencies (mainly if you want to run the tests if altering any of the board code)
 
 - 'npm start' will run the program right in the command line, no need to even start up VSCode.
